@@ -25,9 +25,9 @@ html
               i.fas.fa-envelope
               span Contact
         .search-section
-          input(type="search", placeholder="Search articles...")
-          button(type="submit")
-            i.fas.fa-search
+          input(type="text",name="search", placeholder="Search articles..." hx-post="/articles/search" hx-target=".article-list" hx-trigger="keyup changed delay:300ms,search" hx-indicator=".loader")
+          //- button(type="submit")
+          //-   i.fas.fa-search
     
     .hero-section
       .hero-content
