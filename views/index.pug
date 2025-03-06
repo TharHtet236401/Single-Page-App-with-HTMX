@@ -3,9 +3,26 @@ extends layouts/layout
 block content
   main
     h2 All Articles
-    .article.list
+    .article-list
      include partials/list
     //- article list here
   footer
     h2 Add a New Article
-    //- form here later
+    form(
+        hx-post="/articles"
+        hx-target=".article-list"
+    )
+      input(
+        type="text"
+        name="name"
+        placeholder="Article Name"
+      )
+      textarea(
+        name="body"
+        placeholder="Article Body"
+      )
+      button.btn(
+        type="submit"
+      ) Add Article 
+
+      
