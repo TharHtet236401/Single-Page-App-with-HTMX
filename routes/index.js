@@ -24,5 +24,14 @@ router.post('/articles', (req, res) => {
     res.render('partials/list', {articles: articles});
   }, 3000);
 });
+
+router.get('/about', (req, res) => {
+  res.render('about', {title: 'About Us'});
+});
+
+router.get('/contact', (req, res) => {
+  res.render('contact', {title: 'Contact Us'});
+});
+
 export default router;
 

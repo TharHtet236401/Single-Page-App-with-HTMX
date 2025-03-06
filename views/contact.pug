@@ -1,0 +1,84 @@
+extends layouts/layout
+
+block content
+  main.contact-page
+    .contact-header
+      h1 Contact Us
+      p.subtitle Let's start a conversation. We're here to help and answer any questions you might have.
+    
+    .contact-container
+      .contact-info
+        .info-card
+          i.fas.fa-map-marker-alt
+          h3 Our Location
+          p 123 Business Avenue
+          p New York, NY 10001
+        
+        .info-card
+          i.fas.fa-phone
+          h3 Phone
+          p.contact-link
+            a(href="tel:+1234567890") +1 (234) 567-890
+        
+        .info-card
+          i.fas.fa-envelope
+          h3 Email
+          p.contact-link
+            a(href="mailto:info@dojochronicles.com") info@dojochronicles.com
+        
+        .info-card
+          i.fas.fa-clock
+          h3 Business Hours
+          p Monday - Friday: 9AM - 6PM
+          p Saturday: 10AM - 4PM
+      
+      .contact-form-container
+        form.contact-form(action="/contact", method="POST")
+          h2 Send us a Message
+          .form-group
+            label(for="name")
+              i.fas.fa-user
+              span Name
+            input#name(
+              type="text"
+              name="name"
+              required
+              placeholder="Your name"
+            )
+          
+          .form-group
+            label(for="email")
+              i.fas.fa-envelope
+              span Email
+            input#email(
+              type="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+            )
+          
+          .form-group
+            label(for="subject")
+              i.fas.fa-tag
+              span Subject
+            input#subject(
+              type="text"
+              name="subject"
+              required
+              placeholder="How can we help?"
+            )
+          
+          .form-group
+            label(for="message")
+              i.fas.fa-comment
+              span Message
+            textarea#message(
+              name="message"
+              required
+              placeholder="Your message here..."
+            )
+          
+          button.btn.submit-btn(type="submit")
+            i.fas.fa-paper-plane
+            span Send Message
+

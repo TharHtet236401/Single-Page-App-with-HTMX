@@ -2,29 +2,45 @@ extends layouts/layout
 
 block content
   main
-    h2 All Articles
-    .article-list
-     include partials/list
-    //- article list here
-  footer
-    h2 Add a New Article
-    form(
+    section.articles-section
+      h2.section-title Latest Articles
+      .article-list
+        include partials/list
+    
+    section.add-article-section
+      .section-header
+        h2.section-title Add a New Article
+        p.section-subtitle Share your knowledge with our community
+      
+      form.add-article-form(
         method="POST"
         action="/articles"
         hx-target=".article-list"
         hx-push-url="false"
-    )
-      input(
-        type="text"
-        name="name"
-        placeholder="Article Name"
       )
-      textarea(
-        name="body"
-        placeholder="Article Body"
-      )
-      button.btn(
-        type="submit"
-      ) Add Article 
+        .form-group
+          label(for="name")
+            i.fas.fa-heading
+            span Article Title
+          input#name(
+            type="text"
+            name="name"
+            placeholder="Enter article title"
+            required
+          )
+        
+        .form-group
+          label(for="body")
+            i.fas.fa-pen-fancy
+            span Article Content
+          textarea#body(
+            name="body"
+            placeholder="Write your article content here..."
+            required
+          )
+        
+        button.btn.submit-btn(type="submit")
+          i.fas.fa-paper-plane
+          span Publish Article
 
       

@@ -3,27 +3,81 @@ html
   head
     title #{title}
     link(rel="stylesheet", href="/styles.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css")
     script(src="https://unpkg.com/htmx.org@1.9.12")
   body(hx-boost="true" hx-indicator=".loader")
-    header
-      nav
-        img(src="/shuriken.png")
-        h1 The Dojo Chronicles
+    header.main-header
+      nav.nav-container
+        .logo-section
+          img(src="/shuriken.png", alt="Logo")
+          h1.site-title The Dojo Chronicles
         ul.nav-links
           li
-            a(href="/home") Home
+            a(href="/")
+              i.fas.fa-home
+              span Home
           li
-            a(href="/about") About
+            a(href="/about")
+              i.fas.fa-info-circle
+              span About
           li
-            a(href="/contact") Contact
-    main
+            a(href="/contact")
+              i.fas.fa-envelope
+              span Contact
+        .search-section
+          input(type="search", placeholder="Search articles...")
+          button(type="submit")
+            i.fas.fa-search
+    
+    .hero-section
+      .hero-content
+        h2 Welcome to The Dojo Chronicles
+        p Your source for professional insights and knowledge
+        .hero-cta
+          a.btn.primary-btn(hx-get ="/" hx-target="body") Latest Articles
+          a.btn.secondary-btn(hx-get="/contact" hx-target="body") Contact Us
+    
+    main.main-content
       div(hx-history-elt)
         block content
-    footer
-      p "© 2023 The Dojo Chronicles. All rights reserved."
-      ul.footer-links
-        li
-          a(href="/privacy") Privacy Policy
-        li
-          a(href="/terms") Terms of Service
+    
+    .newsletter-section#newsletter
+      .newsletter-content
+        h3 Stay Updated
+        p Subscribe to our newsletter for the latest updates
+        form.newsletter-form
+          input(type="email", placeholder="Enter your email")
+          button.btn(type="submit") Subscribe
+    
+    footer.main-footer
+      .footer-content
+        .footer-section
+          h4 About Us
+          p Delivering quality content and insights to our readers.
+        .footer-section
+          h4 Quick Links
+          .footer-links
+            a.footer-link(href="/privacy")
+              i.fas.fa-shield-alt
+              span Privacy Policy
+            a.footer-link(href="/terms")
+              i.fas.fa-file-contract
+              span Terms of Service
+            a.footer-link(href="/faq")
+              i.fas.fa-question-circle
+              span FAQ
+        .footer-section
+          h4 Connect With Us
+          .social-links
+            a(href="#" aria-label="Twitter")
+              i.fab.fa-twitter
+            a(href="#" aria-label="Facebook")
+              i.fab.fa-facebook
+            a(href="#" aria-label="LinkedIn")
+              i.fab.fa-linkedin
+            a(href="#" aria-label="Instagram")
+              i.fab.fa-instagram
+      .footer-bottom
+        p &copy; 2024 The Dojo Chronicles. All rights reserved.
+    
     include ../partials/loader
