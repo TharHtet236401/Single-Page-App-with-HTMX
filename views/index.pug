@@ -9,8 +9,10 @@ block content
   footer
     h2 Add a New Article
     form(
-        hx-post="/articles"
+        method="POST"
+        action="/articles"
         hx-target=".article-list"
+        hx-push-url="false"
     )
       input(
         type="text"
