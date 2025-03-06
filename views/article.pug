@@ -4,4 +4,9 @@ block content
   main
     h1 #{article.name}  
     p #{article.body}
+    a.btn(
+        hx-get="/"
+        hx-target="body"
+        hx-push-url="true"
+    ) Back to All Articles
 

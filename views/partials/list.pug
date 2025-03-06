@@ -5,4 +5,5 @@ each article in articles
     a.btn(
         hx-get=`/articles/${article.id}`
         hx-target="body"
+        hx-push-url="true"
     ) View Details
