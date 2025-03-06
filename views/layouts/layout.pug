@@ -9,8 +9,21 @@ html
       nav
         img(src="/shuriken.png")
         h1 The Dojo Chronicles
-    div(
-        hx-history-elt 
-    )
-      block content
+        ul.nav-links
+          li
+            a(href="/home") Home
+          li
+            a(href="/about") About
+          li
+            a(href="/contact") Contact
+    main
+      div(hx-history-elt)
+        block content
+    footer
+      p "© 2023 The Dojo Chronicles. All rights reserved."
+      ul.footer-links
+        li
+          a(href="/privacy") Privacy Policy
+        li
+          a(href="/terms") Terms of Service
     include ../partials/loader

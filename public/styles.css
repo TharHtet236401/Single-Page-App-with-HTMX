@@ -1,10 +1,10 @@
 body {
   font-family: Rubik, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f0f2f5;
   margin: 0;
 }
 h1, h2, h3 {
-  color: #333;
+  color: #2c3e50;
   margin: 0;
 }
 main h2 {
@@ -12,7 +12,7 @@ main h2 {
   text-align: center;
 }
 .btn {
-  background: #ffa300;
+  background: #3498db;
   color: white;
   padding: 10px;
   border: 0;
@@ -24,29 +24,34 @@ main h2 {
 }
 
 header {
-  background: #e4e4e4;
+  background: #2c3e50;
   padding: 20px;
+  color: white;
 }
 header nav {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: space-between;
 }
 header img {
-  width: 60px;
+  width: 50px;
 }
 main {
   max-width: 1200px;
   margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .article-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
 .article {
-  background: #fff;
+  background: #ffffff;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
@@ -59,8 +64,10 @@ form {
   padding: 0 20px;
 }
 footer {
-  background: #eee;
-  padding: 60px 0;
+  background: #2c3e50;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
 }
 footer h2 {
   margin-bottom: 30px;
@@ -101,4 +108,25 @@ form textarea {
 }
 .loader.htmx-request {
   opacity: 1;
+}
+ul.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+ul.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+ul.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+ul.footer-links li a {
+  color: white;
+  text-decoration: none;
 }
