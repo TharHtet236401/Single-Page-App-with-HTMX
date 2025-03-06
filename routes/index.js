@@ -20,7 +20,9 @@ router.post('/articles', (req, res) => {
     body
   };
   articles.push(article);
-  res.render('partials/list', {articles: articles});
+  setTimeout(() => {
+    res.render('partials/list', {articles: articles});
+  }, 3000);
 });
 export default router;
 
